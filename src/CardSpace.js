@@ -7,9 +7,10 @@ const CardSpace = (props) => {
     let className = 'card-space ' + ( props.token ? 'border-black' : 'border-' + color );
     
     return <div className={className}>
-        {props.card}
+        {props.card && props.card}
+        {!props.card && <div className='free-space' />}
         {props.token && 
-            <div className='token' style={{'color': getColor( props.token )}}>X</div> }
+            <div className='token' style={{'background-color': getColor( props.token )}}>&nbsp;</div> }
     </div>
 }
 
